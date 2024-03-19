@@ -1,9 +1,9 @@
 import pytest
-from simpleapp import simpleapp
+from app import app
 
 @pytest.fixture
 def client():
-    simpleapp.config['TESTING'] = True
+    app.config['TESTING'] = True
     with app.test_client() as client:
         yield client
 
